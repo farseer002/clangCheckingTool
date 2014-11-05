@@ -1,0 +1,3 @@
+void fff(){
+	return ;
+}
