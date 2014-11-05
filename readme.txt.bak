@@ -1,7 +1,3 @@
-This is a small project to do some checking on c codes,mainly using clang's libclang and ASTMatcher to do the task.
-It runs on Ubuntu 12.04.
-
---------------------------Setting---------------------------------------------------
 first, you should set the path of llvm's lib in the 'makefile'
 then, set the path for clang to search for headers in 'config.ini'
 just make it
@@ -13,8 +9,8 @@ run your application like 'sh run.sh'
 ./matchCheck
 you will get 'checkLog1.txt' and 'checkLog2.txt' containing the result
 
---------------------------Example---------------------------------------------------
 
+example:
 when you are in the directory of 'clangCheckingTool'
 cp -r otherTest CopyHeadFile/otherTest
 sh fileBash.sh otherTest otherTest.c
