@@ -19,15 +19,13 @@ checkFilep="checkMemory"
 argc=$#
 
 
-if [ $argc -lt 2 ];then
-#    echo "argc" $argc
-#    echo "#0" $0 "#1" $1 "2" $2
-	echo "extra argument should be at least 2(directoryName,fileName)!"
+if [! $argc -eq 2 ];then
+	echo "extra argument should be 2(directoryName,fileName)!"
 	exit 1
 	
 else
     mainFileName=$2
-	testDirName=$1
+    testDirName=$1
 	#echo "fileName" $fileName
 	
     if [ ! -d $dirName ];then
@@ -95,8 +93,9 @@ else
             rm $llogName
         fi
         touch $llogName
-        #it should be the official makefile to build the project
-        #now it is replaced by a simple example
+#       it should be the official makefile to build the project
+#       now it is replaced by a simple example
+
 #        g++ -o "${mainFileName%%.c}" $mainFileName
 #        ./${mainFileName%%.c}
 	
@@ -107,10 +106,14 @@ else
 #        cp $clogName ../../$clogName
 #        cp $llogName ../../c$llogName
 	
-#	cp "out_${mainFileName%%.c}" ../"out_${mainFileName%%.c}"
-	cd CopyHeadFile/$testDirName
-	make
-#	run your program
-#	sh runme.sh
+
+#       the example is running like this :	
+	    make
+	    sh runme.sh
+        ./$mcheckp 
+        echo "\nin checkLog1.txt:"
+        cat $clogName
+        echo "in checkLog2.txt:"
+        cat $llogName
     fi
 fi
